@@ -15,7 +15,7 @@ const APP_SHELL = [
     'img/avatars/thor.jpg',
     'img/avatars/wolverine.jpg',
     'js/app.js',
-    //'js/sw-utils.js'
+    'js/sw-utils.js'
 
 ];
 
