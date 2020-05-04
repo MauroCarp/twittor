@@ -8,8 +8,8 @@ if (navigator.serviceWorker) {
         swLocation = '/sw.js';
     }
 
-    
-    navigator.serviceWorker.register('/sw.js');
+
+    navigator.serviceWorker.register( swLocation );
 }
 
 
