@@ -1,3 +1,4 @@
+importScripts('js/sw-utils.js');
 
 const STATIC_CACHE    = "static-v3";
 const DYNAMIC_CACHE   = "dynamic-v1";
@@ -66,17 +67,8 @@ self.addEventListener('fetch', e => {
             console.log(e.request.url);
             return fetch(e.request).then( newRes =>{
                    
-                     if ( newRes.ok ) {
-                        caches.open( DYNAMIC_CACHE ).then( cache =>{
-                            cache.put(e.request, newRes.clone() );
-                
-                            return newRes.clone();
-                        });
-                    }else{
-                        
-                        return newRes;
-                    
-                    }
+                     return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes );
+               
             })
             .catch(error =>{
                 console.error(error);
